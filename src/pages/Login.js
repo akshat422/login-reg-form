@@ -9,38 +9,77 @@ const Navbar=styled.div`
   flex-wrap:rows;
   `;
   const LForm=styled.div`
-  text-align:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   padding: 7rem;
+  .Main{
+    background-color: #EBEBEB;
+    color: black;
+    padding:5rem;
+    border:2px solid black;
+    border-radius:1px 25px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  .Main:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+  }
+  .hover:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  .submit{
+    background-color: #e7e7e7; 
+    color: black;
+    font-size:16px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  .submitSign{
+    margin-left:18px;
+    background-color: #555555;
+    color:white;
+    font-size:16px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+  }
+  
   `;
   const Radbutt=styled.div`
   font-size: 1rem;
+    label{
+      margin-right 20px;
+    }
   `;
-const Login = () => {
-  return (<>
 
+const Login = () => {
+  return (
+  <div >   
   <Navbar>
      <h2>Your Buddy</h2>
     </Navbar>
     <hr />
     
-    <LForm>
+   <LForm>
+    <div class="Main">
       <div>
       <h2>LOGIN</h2>
     <br /><br /><br />
     <label htmlFor="username">UserName  </label>
-    <input type="text" name="username"/>
+    <input type="text" class="hover" name="username"/>
     <br /><br />
     <label htmlFor="password">Password  </label>
-    <input type="password" name="password"/>
+    <input type="password" class="hover"name="password"/>
       </div>
       <br />
       <Radbutt><input type="radio" id="MessOwner"  name="radioButt" value="Mess Owner"/>
-      <label htmlFor="MessOwner">Mess Owner</label>
-      <input type="radio" id="Customer"  name="radioButt" value="customer"/>
+      <label  htmlFor="MessOwner">Mess Owner</label>
+      <input class="cust_name" type="radio" id="Customer"  name="radioButt" value="customer"/>
       <label htmlFor="customer">Customer</label>    
       </Radbutt><br />
-      </LForm>      
-  </>
+      <button class="submit" >Login</button>
+      <button class="submitSign">SignUp</button>
+     </div>    
+    </LForm>      
+      
+  </div>
   
     );
 };
