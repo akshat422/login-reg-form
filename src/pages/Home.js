@@ -10,6 +10,10 @@ const HomeStyled = styled.div`
   font-size: 2rem;
 `;
 
+const pad=styled.div`
+padding: 1rem;
+`;
+
 const Home = () => {
   return (
     <HomeStyled>
@@ -17,6 +21,7 @@ const Home = () => {
         <div>Welcome to Your buddy</div>
         <li>
           <Link to="/login">Login</Link>
+          <Link to="/signup">Signup</Link>
         </li>
       </ul>
     </HomeStyled>

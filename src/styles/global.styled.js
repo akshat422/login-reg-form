@@ -149,5 +149,5 @@ ul {
   margin: 0 auto;
   width: 99%;
 }
-@media only screen and (min-width: 600px) {
-}
+// @media only screen and (min-width: 600px) {
+// }
