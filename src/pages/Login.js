@@ -12,12 +12,12 @@ const Navbar=styled.div`
   display:flex;
   justify-content:center;
   align-items:center;
-  padding: 7rem;
+  padding: 6rem;
   .Main{
     background-color: #EBEBEB;
     color: black;
     padding:5rem;
-    border:1px solid black;
+    border:2px solid black;
     border-radius:1px 25px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
@@ -39,8 +39,7 @@ const Navbar=styled.div`
     color:white;
     font-size:16px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
-  }
-  
+  }  
   `;
   const Radbutt=styled.div`
   font-size: 1rem;
@@ -49,7 +48,7 @@ const Navbar=styled.div`
     }
   `;
 
-const Login = () => {
+const Login = (props) => {
   return (
   <div >   
   <Navbar>
