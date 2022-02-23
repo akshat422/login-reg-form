@@ -17,7 +17,7 @@ const Navbar=styled.div`
     background-color: #EBEBEB;
     color: black;
     padding:5rem;
-    border:2px solid black;
+    border:1px solid black;
     border-radius:1px 25px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
