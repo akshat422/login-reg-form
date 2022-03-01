@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-const Navbar=styled.div`
- display: flex;
-  justify-content: left;
-  align-items: center;
-  padding : 1rem;
-  width: 100%;
-  flex-wrap:rows;
-  `;
+import Navbar from "";
+// const Navbar=styled.div`
+//  display: flex;
+//   justify-content: left;
+//   align-items: center;
+//   padding : 1rem;
+//   width: 100%;
+//   flex-wrap:rows;
+//   `;
   const LForm=styled.div`
   display:flex;
   justify-content:center;
@@ -51,9 +52,7 @@ const Navbar=styled.div`
 const Login = (props) => {
   return (
   <div >   
-  <Navbar>
-     <h2>Your Buddy</h2>
-    </Navbar>
+    <Navbar/>
     <hr />
     
    <LForm>

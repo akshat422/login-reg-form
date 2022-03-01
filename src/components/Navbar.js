@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-const Navbar=styled.div`
+const Nav=styled.div`
  display: flex;
   justify-content: left;
   align-items: center;
@@ -11,9 +11,9 @@ const Navbar=styled.div`
 const Navbar=()=>{
     return(
         <>
-             <Navbar>
+             <Nav>
             <h2>Your Buddy</h2>
-            </Navbar>
+            </Nav>
             <hr />
         </>
     );
