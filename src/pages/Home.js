@@ -19,7 +19,7 @@ const Home = () => {
         <div>Welcome to Your buddy</div>
         <li>
           <Link to="/login">Login</Link>
-          {/* <Link to="/signup">Signup</Link> */}
+          <Link to="/signup">Signup</Link>
         </li>
       </ul>
     </HomeStyled>

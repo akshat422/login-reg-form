@@ -54,8 +54,7 @@ const Login = (props) => {
   return (
     <div>
       <Navbar />
-      <hr />
-
+     
       <LForm>
         <div class="Main">
           <div>
@@ -67,7 +66,7 @@ const Login = (props) => {
             <input type="text" class="hover" name="username" />
             <br />
             <br />
-            <label htmlFor="password">Password </label>
+            <label htmlFor="password">Password {"  "}</label>
             <input type="password" class="hover" name="password" />
           </div>
           <br />
