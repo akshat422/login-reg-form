@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
-
+import { useState } from "react";
+import axios from "axios";
 // const Navbar=styled.div`
 //  display: flex;
 //   justify-content: left;
@@ -51,10 +52,41 @@ const Radbutt = styled.div`
 `;
 
 const Login = (props) => {
+  const [error, setError] = useState("");
+  const [name, setName] = useState("");
+  const [password, setPass] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(name, password);
+    const payload = {
+      username: name,
+      password: password,
+    };
+
+    const data = await fetch("http://localhost:4000/app/user/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const json = await data.json();
+    console.log(json);
+
+    if (json.error) {
+      return setError(json.error);
+    }
+
+    if (json.user) {
+      return (window.location.href = "/next");
+    }
+  };
   return (
     <div>
       <Navbar />
-     
+
       <LForm>
         <div class="Main">
           <div>
@@ -62,12 +94,26 @@ const Login = (props) => {
             <br />
             <br />
             <br />
-            <label htmlFor="username">UserName </label>
-            <input type="text" class="hover" name="username" />
+            <label htmlFor="name">UserName </label>
+            <input
+              type="text"
+              class="hover"
+              name="username"
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+            />
             <br />
             <br />
             <label htmlFor="password">Password {"  "}</label>
-            <input type="password" class="hover" name="password" />
+            <input
+              type="password"
+              class="hover"
+              name="password"
+              onChange={(e) => {
+                setPass(e.target.value);
+              }}
+            />
           </div>
           <br />
           <Radbutt>
@@ -88,7 +134,10 @@ const Login = (props) => {
             <label htmlFor="customer">Customer</label>
           </Radbutt>
           <br />
-          <button class="submit">Login</button>
+          <p style={{ color: "red" }}>{error}</p>
+          <button class="submit" onClick={handleSubmit}>
+            Login
+          </button>
           <button class="submitSign">SignUp</button>
         </div>
       </LForm>

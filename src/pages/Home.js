@@ -10,8 +10,6 @@ const HomeStyled = styled.div`
   font-size: 2rem;
 `;
 
-
-
 const Home = () => {
   return (
     <HomeStyled>
