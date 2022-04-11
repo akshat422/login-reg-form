@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import { useState } from "react";
-import axios from "axios";
 // const Navbar=styled.div`
 //  display: flex;
 //   justify-content: left;

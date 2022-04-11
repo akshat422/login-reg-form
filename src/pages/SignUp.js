@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
-import axios from "axios";
 const Sform = styled.div`
   display: flex;
   justify-content: center;
@@ -79,7 +78,7 @@ function SignUp() {
       return (window.location.href = "/login");
     }
   };
-
+  
   return (
     <>
       <Navbar />
