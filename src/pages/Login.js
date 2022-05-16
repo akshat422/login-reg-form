@@ -2,14 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import { useState } from "react";
-// const Navbar=styled.div`
-//  display: flex;
-//   justify-content: left;
-//   align-items: center;
-//   padding : 1rem;
-//   width: 100%;
-//   flex-wrap:rows;
-//   `;
 const LForm = styled.div`
   display: flex;
   justify-content: center;
@@ -56,30 +48,28 @@ const Login = (props) => {
   const [password, setPass] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(name, password);
+    e.preventDefault();   //used to prevent page from reloading
     const payload = {
       username: name,
       password: password,
     };
 
     const data = await fetch("http://localhost:4000/app/user/login", {
-      method: "POST",
-      headers: {
+      method: "POST",       //specify which method we are using
+      headers: {    //meta data
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(payload),    //converting json to string
     });
 
     const json = await data.json();
-    console.log(json);
-
+    
     if (json.error) {
       return setError(json.error);
     }
 
     if (json.user) {
-      return (window.location.href = "/next");
+      return (window.location.href = "/next");    //used to direct to other next page
     }
   };
   return (

@@ -51,7 +51,6 @@ function SignUp() {
       return setError("Password and confirm password should match");
     }
 
-    console.log(name, mob, add, pass);
     const payload = {
       username: name,
       number: mob,
@@ -68,7 +67,6 @@ function SignUp() {
     });
 
     const json = await data.json();
-    console.log(json);
 
     if (json.error) {
       return setError(json.error);

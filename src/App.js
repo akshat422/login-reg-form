@@ -7,7 +7,7 @@ import Signup_next from "./pages/Signup_next";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter> 
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
         <Route exact path="/login" element={<Login />}></Route>
